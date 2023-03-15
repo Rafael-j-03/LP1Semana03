@@ -20,6 +20,16 @@ namespace ArraySums
 
             // Create the bidimensional array
             float[,] array = new float[horizontalValue, verticalValue];
+
+            // Asks the user for numbers to fill the array
+            for (int i = 0; i < horizontalValue; i++)
+            {
+                for (int j = 0; j < verticalValue; j++)
+                {
+                    Console.Write($"Say a value to: [{i},{j}]: ");
+                    array[i, j] = float.Parse(Console.ReadLine());
+                }
+            }
         }
     }
 }
