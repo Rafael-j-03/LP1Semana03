@@ -15,6 +15,15 @@ namespace ChangeString
             string secondQuestion = Console.ReadLine();
             // Convert the input to a character
             char character = char.Parse(secondQuestion);
+
+            // Print the string omitting the character
+            foreach (char c in firstQuestion) 
+            {
+                if (c != character)
+                {
+                    Console.Write(c);
+                }
+            }
         }
     }
 }
