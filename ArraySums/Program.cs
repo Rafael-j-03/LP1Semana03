@@ -26,9 +26,33 @@ namespace ArraySums
             {
                 for (int j = 0; j < verticalValue; j++)
                 {
-                    Console.Write($"Say a value to: [{i},{j}]: ");
+                    Console.Write($"Say a value to: [{i + 1},{j + 1}]: ");
                     array[i, j] = float.Parse(Console.ReadLine());
                 }
+            }
+
+            // Calculate the sum of the values in each row 
+            Console.WriteLine("Row sum:");
+            for (int i = 0; i < horizontalValue; i++)
+            {
+                float sumLine = 0;
+                for (int j = 0; j < verticalValue; j++)
+                {
+                    sumLine += array[i, j];
+                }
+                Console.WriteLine($"Line {i + 1}: {sumLine}");
+            }
+
+            // Calculate the sum of the values in each column 
+            Console.WriteLine("Column sum:");
+            for (int j = 0; j < verticalValue; j++)
+            {
+                float sumColumn = 0;
+                for (int i = 0; i < horizontalValue; i++)
+                {
+                    sumColumn += array[i, j];
+                }
+                Console.WriteLine($"Column {j + 1}: {sumColumn}");
             }
         }
     }
