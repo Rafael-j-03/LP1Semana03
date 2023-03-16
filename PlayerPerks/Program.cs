@@ -29,7 +29,6 @@ namespace PlayerPerks
                 {
                     myPerks ^= Perks.DoubleJump;
                 }
-
                 // If the perk is invalid
                 else
                 {
@@ -57,6 +56,7 @@ namespace PlayerPerks
                 {
                     Console.WriteLine("Silent jumper!");
                 }
+                // If the player does not have the perk "AutoHeal"
                 if ((myPerks & Perks.AutoHeal) != (Perks.AutoHeal))
                 {
                     Console.WriteLine("Not gonna make it!");
