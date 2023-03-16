@@ -46,9 +46,14 @@ namespace PlayerPerks
             {
                 Console.WriteLine("No perks at all!");
             }
-            if (invalidPerk == false)
+            if (!invalidPerk & myPerks != 0)
             {
                 Console.WriteLine(myPerks);
+                // If the player have the Stealth and the Double jump perks
+                if ((myPerks & (Perks.Stealth & Perks.DoubleJump)) == (Perks.Stealth & Perks.DoubleJump))
+                {
+                Console.WriteLine("Silent jumper!");
+                }
             }
         }
     }
