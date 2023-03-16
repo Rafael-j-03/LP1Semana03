@@ -7,6 +7,7 @@ namespace PlayerPerks
         static void Main(string[] args)
         {
             Perks myPerks = 0;
+            bool invalidPerk = false;
 
             // Check every character on the first argument gave
             foreach (char c in args[0])
@@ -16,21 +17,35 @@ namespace PlayerPerks
                 {
                     myPerks ^= Perks.WaterBreathing;
                 }
-                if (c == 'a')
+                else if (c == 'a')
                 {
                     myPerks ^= Perks.AutoHeal;
                 }
-                if (c == 's')
+                else if (c == 's')
                 {
                     myPerks ^= Perks.Stealth;
                 }
-                if (c == 'd')
+                else if (c == 'd')
                 {
                     myPerks ^= Perks.DoubleJump;
                 }
+
+                // If the perk is invalid
+                else
+                {
+                    invalidPerk = true;
+                }
             }
 
-            Console.WriteLine(myPerks);
+            // Check the player's perks
+            if (invalidPerk)
+            {
+                Console.WriteLine("Unknown perk!");
+            }
+            else
+            {
+                Console.WriteLine(myPerks);
+            }
         }
     }
 }
