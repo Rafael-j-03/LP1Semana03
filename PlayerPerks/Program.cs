@@ -42,7 +42,11 @@ namespace PlayerPerks
             {
                 Console.WriteLine("Unknown perk!");
             }
-            else
+            if (myPerks == 0)
+            {
+                Console.WriteLine("No perks at all!");
+            }
+            if (invalidPerk == false)
             {
                 Console.WriteLine(myPerks);
             }
