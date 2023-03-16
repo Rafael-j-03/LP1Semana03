@@ -6,7 +6,12 @@ namespace PlayerPerks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Perks myPerks;
+
+            foreach (char i in args[0])
+            {
+
+            }
         }
     }
 }
