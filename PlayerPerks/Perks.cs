@@ -1,3 +1,6 @@
+using System;
+
+[Flags]
 enum Perks
 {
     WaterBreathing = 1 << 0,
