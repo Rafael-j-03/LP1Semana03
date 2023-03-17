@@ -27,11 +27,11 @@ namespace PlayerAchievements
             for (int i = 0; i < achievements.Length; i++)
             {
                 Achievements playerAchievements = 0;
+                int nPerks = 0;
 
                 for (int j = 0; j < achievements[i]; j++)
                 {
-                    int nPerks = 0;
-                    nPerks ++;
+                    nPerks++;
 
                     if (nPerks == 1)
                     {
@@ -43,7 +43,7 @@ namespace PlayerAchievements
                     }
                     if (nPerks == 3)
                     {
-                        playerAchievements ^= Achievements.FindHiddenLevel;
+                        playerAchievements ^= Achievements.FinishGame;
                     }
                 }
 
@@ -52,6 +52,19 @@ namespace PlayerAchievements
                 {
                     Console.WriteLine($"Player {i + 1} have:");
                     Console.WriteLine(playerAchievements);
+
+                    // If the player have all the achievements
+                    if ((playerAchievements &
+                    (Achievements.DefeatOptionalBoss |
+                    Achievements.FindHiddenLevel |
+                    Achievements.FinishGame))
+                    ==
+                    (Achievements.DefeatOptionalBoss |
+                    Achievements.FindHiddenLevel |
+                    Achievements.FinishGame))
+                    {
+                        Console.WriteLine("Completionist!");
+                    }
                 }
                 else
                 {
