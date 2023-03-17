@@ -11,42 +11,56 @@ namespace PlayerAchievements
             string numberOfPlayersQ = Console.ReadLine();
             int n = Convert.ToInt32(numberOfPlayersQ);
 
-            // Create array for achievements
-            int[] achievements = new int[n];
+            // Create array for players
+            int[] players = new int[n];
 
-            // Ask the user the number of achievements for each player
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write($"Enter the number of achievements for player {i + 1}: ");
-                string givenAchievements = Console.ReadLine();
-                int nGivenAchievements = Convert.ToInt32(givenAchievements);
-                achievements[i] = nGivenAchievements;
-            }
-
-            // Give every player his achievements and show it
-            for (int i = 0; i < achievements.Length; i++)
+            // Ask every player his achievements and show it
+            for (int i = 0; i < players.Length; i++)
             {
                 Achievements playerAchievements = 0;
-                int nPerks = 0;
+                int achievements = 0;
 
-                for (int j = 0; j < achievements[i]; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    nPerks++;
+                    achievements++;
 
-                    if (nPerks == 1)
+                    if (achievements == 1)
                     {
-                        playerAchievements ^= Achievements.DefeatOptionalBoss;
+                        Console.Write($"Does the player have the achievement DefeatOptionalBoss?" +
+                        " (Yes or No)? ");
+                        string DefeatOptionalBossQ = Console.ReadLine();
+
+                        if (DefeatOptionalBossQ == "Yes")
+                        {
+                            playerAchievements ^= Achievements.DefeatOptionalBoss;
+                        }
                     }
-                    if (nPerks == 2)
+                    if (achievements == 2)
                     {
-                        playerAchievements ^= Achievements.FindHiddenLevel;
+                        Console.Write($"Does the player have the achievement FindHiddenLevel?" +
+                        " (Yes or No)? ");
+                        string FindHiddenLevelQ = Console.ReadLine();
+
+                        if (FindHiddenLevelQ == "Yes")
+                        {
+                            playerAchievements ^= Achievements.FindHiddenLevel;
+                        }
                     }
-                    if (nPerks == 3)
+                    if (achievements == 3)
                     {
-                        playerAchievements ^= Achievements.FinishGame;
+                        Console.Write($"Does the player have the achievement FinishGame?" +
+                        " (Yes or No)? ");
+                        string FinishGameQ = Console.ReadLine();
+
+                        if (FinishGameQ == "Yes")
+                        {
+                            playerAchievements ^= Achievements.FinishGame;
+                        }
                     }
                 }
 
+                // Create empty line
+                Console.WriteLine("");
                 // Check if the player have any achievements
                 if (playerAchievements != 0)
                 {
@@ -66,10 +80,12 @@ namespace PlayerAchievements
                         Console.WriteLine("Completionist!");
                     }
                 }
+
                 else
                 {
                     Console.WriteLine($"Player {i + 1} have no achievements!");
                 }
+                // Create empty line
                 Console.WriteLine("");
             }
         }
