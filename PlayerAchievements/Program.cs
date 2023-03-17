@@ -12,6 +12,10 @@ namespace PlayerAchievements
             Console.Write("Enter the number of players: ");
             string numberOfPlayersQ = Console.ReadLine();
             int n = Convert.ToInt32(numberOfPlayersQ);
+
+                        
+            // Create array for achievements
+            int [] achievements = new int [n];
         }
     }
 }
