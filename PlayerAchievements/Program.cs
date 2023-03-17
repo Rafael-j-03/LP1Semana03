@@ -6,6 +6,8 @@ namespace PlayerAchievements
     {
         static void Main(string[] args)
         {
+            Achievements playerAchievements = 0;
+            
             // Ask the user the number of players and turn it into a int
             Console.Write("Enter the number of players: ");
             string numberOfPlayersQ = Console.ReadLine();
