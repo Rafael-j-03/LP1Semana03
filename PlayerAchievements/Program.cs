@@ -70,6 +70,7 @@ namespace PlayerAchievements
                 {
                     Console.WriteLine($"Player {i + 1} have no achievements!");
                 }
+                Console.WriteLine("");
             }
         }
     }
