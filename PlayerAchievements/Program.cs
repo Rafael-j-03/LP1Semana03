@@ -26,7 +26,7 @@ namespace PlayerAchievements
 
                     if (achievements == 1)
                     {
-                        Console.Write($"Does the player have the achievement DefeatOptionalBoss?" +
+                        Console.Write($"Does the player {i + 1} have the achievement DefeatOptionalBoss?" +
                         " (Yes or No)? ");
                         string DefeatOptionalBossQ = Console.ReadLine();
 
@@ -37,7 +37,7 @@ namespace PlayerAchievements
                     }
                     if (achievements == 2)
                     {
-                        Console.Write($"Does the player have the achievement FindHiddenLevel?" +
+                        Console.Write($"Does the player {i + 1} have the achievement FindHiddenLevel?" +
                         " (Yes or No)? ");
                         string FindHiddenLevelQ = Console.ReadLine();
 
@@ -48,7 +48,7 @@ namespace PlayerAchievements
                     }
                     if (achievements == 3)
                     {
-                        Console.Write($"Does the player have the achievement FinishGame?" +
+                        Console.Write($"Does the player {i + 1} have the achievement FinishGame?" +
                         " (Yes or No)? ");
                         string FinishGameQ = Console.ReadLine();
 
@@ -80,7 +80,6 @@ namespace PlayerAchievements
                         Console.WriteLine("Completionist!");
                     }
                 }
-
                 else
                 {
                     Console.WriteLine($"Player {i + 1} have no achievements!");
